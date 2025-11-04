@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Edit Student | Student Management</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/main.js"></script>
+    <script src="../js/student.js"></script>
+    <script src="../js/edit-student.js"></script>
+  </head>
+  <body onload="loadNavbar(); populateStudentSelector();">
+    <nav id="navbar"></nav>
+    <div class="container">
+      <h2>Edit Student Record</h2>
+
+      <div>
+        <label for="studentSelect">Select Student:</label>
+        <select id="studentSelect" onchange="loadStudentData()">
+          <option value="">-- Select Student --</option>
+        </select>
+      </div>
+
+      <div id="editFormContainer" style="display: none; margin-top: 20px">
+        <label>Name:</label>
+        <input id="editName" disabled />
+
+        <label>Class:</label>
+        <input id="editClassName" disabled />
+
+        <div id="semestersContainer"></div>
+
+        <button onclick="addSemester()">➕ Add Semester</button>
+        <br /><br />
+        <button onclick="saveEditedStudent()">Save Changes</button>
+      </div>
+    </div>
+  </body>
+</html>

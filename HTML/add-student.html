@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add Student | Student Management</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/main.js"></script>
+    <script src="../js/student.js"></script>
+  </head>
+  <body onload="loadNavbar(); renderStudentsTable();">
+    <nav id="navbar"></nav>
+    <div class="container">
+      <h2>Add Student Record</h2>
+
+      <div>
+        <input id="name" placeholder="StudentName-RegNo" />
+        <input id="className" placeholder="Class" />
+        <input id="semester" type="number" min="1" placeholder="Semester" />
+
+        <div id="subjects-container">
+          <div class="subject-row">
+            <input class="subject-name" placeholder="Subject" />
+            <input
+              class="subject-mark"
+              type="number"
+              min="0"
+              max="100"
+              placeholder="Marks"
+            />
+            <button type="button" onclick="removeSubjectRow(this)">❌</button>
+          </div>
+        </div>
+        <button type="button" onclick="addSubjectRow()">➕ Add Subject</button>
+
+        <br />
+        <button onclick="addStudent()">Add / Update Student</button>
+      </div>
+
+      <hr />
+
+      <h3>Current Student Records</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Class</th>
+            <th>Semesters & Marks</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="studentTable"></tbody>
+      </table>
+    </div>
+  </body>
+</html>
